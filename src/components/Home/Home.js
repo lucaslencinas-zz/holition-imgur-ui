@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Grid from './Grid';
+import Grid from '../Grid';
 import './Home.css';
 
 class Home extends React.Component {
@@ -13,15 +13,12 @@ class Home extends React.Component {
   }
 
   render() {
-    const { images, onLoadImages } = this.props;
+    const { images } = this.props;
 
     return (
       <div className="home">
         <h1>Wall</h1>
-        <Grid
-          images={images}
-          onLoadImages={onLoadImages}
-        />
+        <Grid images={images} />
       </div>
     );
   }

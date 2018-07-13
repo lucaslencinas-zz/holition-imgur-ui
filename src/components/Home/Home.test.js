@@ -5,6 +5,23 @@ import sinon from 'sinon';
 import { shallow, mount } from 'enzyme';
 import Home from './Home';
 
+const images = [
+  {
+    imgId: 'some-id2',
+    imgUrl: 'http://some-url.com/leonardo-example',
+    username: 'leonardo',
+    title: 'Some title for some-id1',
+    isPublic: false
+  },
+  {
+    imgId: 'some-id3',
+    imgUrl: 'http://some-url.com/lencinas-example',
+    username: 'lencinas',
+    title: 'Some title for some-id1',
+    isPublic: true
+  }
+];
+
 describe('Home', () => {
   let home;
   let onLoadImages;
@@ -21,7 +38,6 @@ describe('Home', () => {
       const grid = home.find('Grid');
       expect(home.find('h1').text()).to.equal('Wall');
       expect(grid.prop('images')).to.equal(images);
-      expect(grid.prop('onLoadImages')).to.equal(onLoadImages);
     });
   });
 
@@ -38,7 +54,6 @@ describe('Home', () => {
     it('Renders the elements correctly', () => {
       const grid = home.find('Grid');
       expect(grid.prop('images')).to.eql([]);
-      expect(grid.prop('onLoadImages')).to.equal(onLoadImages);
     });
 
     it('Calls onLoadImages to get the images', () => {
@@ -61,20 +76,3 @@ describe('Home', () => {
     });
   });
 });
-
-const images = [
-  {
-    imgId: 'some-id2',
-    imgUrl: 'http://some-url.com/leonardo-example',
-    username: 'leonardo',
-    title: 'Some title for some-id1',
-    isPublic: false
-  },
-  {
-    imgId: 'some-id3',
-    imgUrl: 'http://some-url.com/lencinas-example',
-    username: 'lencinas',
-    title: 'Some title for some-id1',
-    isPublic: true
-  }
-];
