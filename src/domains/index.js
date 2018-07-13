@@ -7,15 +7,24 @@ import {
   reducers as imagesReducers
 } from './images';
 
+import {
+  actions as userActions,
+  selectors as userSelectors,
+  reducers as userReducers
+} from './user';
+
 export const reducers = combineReducers({
   images: imagesReducers,
+  user: userReducers,
   routing: routerReducer
 });
 
 export const actions = {
-  ...imagesActions
+  ...imagesActions,
+  ...userActions
 };
 
 export const selectors = {
-  ...imagesSelectors
+  ...imagesSelectors,
+  ...userSelectors
 };
