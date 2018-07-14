@@ -10,7 +10,7 @@ import UserImages from '../components/UserImages';
 const Router = () => (
   <div>
     <Navbar />
-    <main>
+    <main className="content">
       <Route
         exact path="/"
         component={Home}

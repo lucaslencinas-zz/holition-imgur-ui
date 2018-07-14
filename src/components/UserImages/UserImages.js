@@ -16,7 +16,7 @@ class UserImages extends React.Component {
     const { userImages } = this.props;
     return (
       <div className="images">
-        <h3>My Images</h3>
+        <h1>My Images</h1>
         <Grid images={userImages} />
       </div>
     );

@@ -3,20 +3,40 @@ import './Login.css';
 
 const Login = () => (
   <div className="login">
-    <h3>Login</h3>
+    <h1>Login</h1>
     <div className="login-form">
       <div className="form-row">
-        username: input for username
+        <label htmlFor="username">
+          Username:
+          <input
+            placeholder="username"
+            type="text"
+            id="username"
+            onChange={(event) => console.log(event.target.value)}
+          />
+        </label>
       </div>
       <div className="form-row">
-        password: input for password
+        <label htmlFor="password">
+          Password:
+          <input
+            placeholder="password"
+            id="password"
+            type="password"
+            onChange={(event) => console.log(event.target.value)}
+          />
+        </label>
       </div>
       <div className="form-buttons">
         <div className="button">
-          Cancel - Link
+          <button>
+            <a href="/">Cancel</a>
+          </button>
         </div>
         <div className="button">
-          Login - Button
+          <button onClick={() => console.log('login')}>
+            Login
+          </button>
         </div>
       </div>
     </div>
