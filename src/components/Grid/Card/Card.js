@@ -6,7 +6,7 @@ const Card = ({ image = {} }) => {
   const className = `card ${image.isPublic ? '' : 'card-private'}`;
   return (
     <div className={className}>
-      <img src="/default.jpeg" alt={image.imgUrl} />
+      <img src={image.imgUrl} alt={image.imgUrl} />
       <p className="card-title">
         <b>{image.title}</b>
       </p>

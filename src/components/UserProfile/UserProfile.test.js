@@ -14,13 +14,13 @@ const userProfile = {
 
 describe('UserProfile', () => {
   let userProfileComponent;
-  let onLoadUserFullProfile;
+  let onLoadUserProfile;
 
   describe('When shallowing', () => {
     beforeEach(() => {
-      onLoadUserFullProfile = sinon.spy();
+      onLoadUserProfile = sinon.spy();
       userProfileComponent = shallow((
-        <UserProfile onLoadUserFullProfile={onLoadUserFullProfile} profile={userProfile} />
+        <UserProfile onLoadUserProfile={onLoadUserProfile} profile={userProfile} />
       ));
     });
 
