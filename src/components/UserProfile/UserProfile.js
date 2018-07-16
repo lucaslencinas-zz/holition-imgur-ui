@@ -4,37 +4,38 @@ import './UserProfile.css';
 
 class UserProfile extends React.Component {
   componentDidMount() {
-    const { profile = {}, onLoadUserFullProfile } = this.props;
+    const { profile = {}, onLoadUserProfile } = this.props;
 
     if (!profile.isFull) {
-      onLoadUserFullProfile();
+      onLoadUserProfile();
     }
   }
 
   render() {
+    const { profile } = this.props;
     return (
       <div className="profile">
         <h1>Profile</h1>
         <div className="profile-content">
           <div className="profile-row">
             <span><b>Username:</b></span>
-            <span>username</span>
+            <span>{profile.username}</span>
           </div>
           <div className="profile-row">
             <span><b>Password:</b></span>
-            <span>password</span>
+            <span>{profile.password}</span>
           </div>
           <div className="profile-row">
             <span><b>Name:</b></span>
-            <span>name</span>
+            <span>{profile.name}</span>
           </div>
           <div className="profile-row">
             <span><b>Age:</b></span>
-            <span>age</span>
+            <span>{profile.age}</span>
           </div>
           <div className="profile-row">
             <span><b>Gender:</b></span>
-            <span>gender</span>
+            <span>{profile.gender}</span>
           </div>
         </div>
       </div>
@@ -44,7 +45,7 @@ class UserProfile extends React.Component {
 
 UserProfile.propTypes = {
   profile: PropTypes.object.isRequired,
-  onLoadUserFullProfile: PropTypes.func.isRequired
+  onLoadUserProfile: PropTypes.func.isRequired
 };
 
 export default UserProfile;

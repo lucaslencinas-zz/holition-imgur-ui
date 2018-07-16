@@ -1,48 +1,41 @@
 
-export function fetchUserImages() {
-  // const url = '/api/users/:username/images';
-  //
-  // return fetch(url)
-  //   .then((response) => response.json());
-  return Promise.resolve([
-    {
-      imgId: 'some-id2',
-      imgUrl: 'http://some-url.com/leonardo-example',
-      username: 'leonardo',
-      title: 'Some title for some-id1',
-      isPublic: false
-    },
-    {
-      imgId: 'some-id3',
-      imgUrl: 'http://some-url.com/lencinas-example',
-      username: 'leonardo',
-      title: 'Some title for some-id1',
-      isPublic: true
-    }
-  ]);
+export function fetchUserImages({ username, authToken }) {
+  const url = `/api/users/${username}/images`;
+
+  return fetch(url, {
+    method: 'GET',
+    headers: { Authorization: authToken }
+  })
+    .then((response) => response.json());
 }
 
-export function fetchProfile() {
-  // const url = '/api/users/:username';
-  //
-  // return fetch(url)
-  //   .then((response) => response.json());
-  return Promise.resolve({
-    name: 'Lucas',
-    username: 'lucas'
-  });
+export function fetchProfile({ username, authToken }) {
+  const url = `/api/users/${username}/profile`;
+
+  return fetch(url, {
+    method: 'GET',
+    headers: { Authorization: authToken }
+  })
+    .then((response) => response.json());
 }
 
-export function fetchFullProfile() {
-  // const url = '/api/users/:username/profile';
-  //
-  // return fetch(url)
-  //   .then((response) => response.json());
-  return Promise.resolve({
-    name: 'Lucas',
-    username: 'lucas',
-    age: 25,
-    gender: 'male',
-    password: 'lucas123'
-  });
+export function login({ username, password }) {
+  const url = '/api/login';
+
+  return fetch(url, {
+    method: 'POST',
+    body: JSON.stringify({ username, password }),
+    headers: { 'Content-Type': 'application/json' }
+  })
+    .then((response) => response.json());
+}
+
+export function logout({ authToken }) {
+  const url = '/api/logout';
+
+  return fetch(url, {
+    method: 'GET',
+    headers: { Authorization: authToken }
+  })
+    .then((response) => response.json());
 }

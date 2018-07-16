@@ -1,14 +1,14 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { actions, selectors } from '../../domains';
-import UserProfile from './UserProfile';
+import Navbar from './Navbar';
 
 const mapStateToProps = (state) => ({
-  profile: selectors.profile(state)
+  isLoggedIn: selectors.isLoggedIn(state)
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
-  onLoadUserProfile: actions.fetchUserProfile
+  onLogout: actions.logout
 }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

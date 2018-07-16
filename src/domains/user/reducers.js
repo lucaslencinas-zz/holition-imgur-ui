@@ -13,16 +13,23 @@ export default function userReducer(state = initialState, action) {
         images: state.images.concat(action.images)
       };
 
-    case actions.FETCH_FULL_PROFILE_SUCCESS:
-      return {
-        ...state,
-        profile: { ...action.profile, isFull: true }
-      };
-
     case actions.FETCH_PROFILE_SUCCESS:
       return {
         ...state,
+        profile: { ...state.profile, ...action.profile, isFull: true }
+      };
+
+    case actions.LOGIN_SUCCESS:
+      return {
+        ...state,
         profile: { ...action.profile, isFull: false }
+      };
+
+    case actions.LOGOUT_SUCCESS:
+      return {
+        ...state,
+        profile: { ...action.profile, isFull: false },
+        images: []
       };
 
     default:

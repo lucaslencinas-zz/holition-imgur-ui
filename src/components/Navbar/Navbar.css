@@ -1,9 +1,35 @@
 .navbar {
   display: flex;
+  justify-content: space-between;
   background-color: rgba(0,0,0,.8);
   color: #fff;
   text-transform: uppercase;
   font-weight: 400;
   padding: 25px 100px;
+}
 
+.left {
+  display: flex;
+}
+
+.left * {
+  padding: 0 5px;
+}
+
+.navbar a:hover, .navbar button:hover {
+  color: #6495ed;
+}
+
+.navbar button {
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.user-buttons a {
+  padding: 0 10px;
 }
