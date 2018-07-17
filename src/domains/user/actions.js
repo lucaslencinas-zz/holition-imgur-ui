@@ -7,6 +7,10 @@ export function fetchUserImages() {
   return (dispatch, getState) => {
     const state = getState();
     const profile = selectors.profile(state);
+
+    if (!profile.authToken) {
+      return Promise.resolve(dispatch(push('/login')));
+    }
     return userService.fetchUserImages(profile)
       .then((images) => (
         dispatch({
@@ -21,6 +25,9 @@ export function fetchUserProfile() {
   return (dispatch, getState) => {
     const state = getState();
     const profile = selectors.profile(state);
+    if (!profile.authToken) {
+      return Promise.resolve(dispatch(push('/login')));
+    }
     return userService.fetchProfile(profile)
       .then((fullProfile) => (
         dispatch({

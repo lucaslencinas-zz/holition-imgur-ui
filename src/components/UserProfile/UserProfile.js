@@ -22,10 +22,6 @@ class UserProfile extends React.Component {
             <span>{profile.username}</span>
           </div>
           <div className="profile-row">
-            <span><b>Password:</b></span>
-            <span>{profile.password}</span>
-          </div>
-          <div className="profile-row">
             <span><b>Name:</b></span>
             <span>{profile.name}</span>
           </div>
