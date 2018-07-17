@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+## Tech stack
+
+- React
+- Redux
+- Enzyme
+- Jest
+- Chai
+- Sinon
+
 
 ## Development
 
@@ -13,7 +22,6 @@ To install and start the UI server execute the following commands:
 npm install
 npm start
 ```
-
 
 ## Testing
 
