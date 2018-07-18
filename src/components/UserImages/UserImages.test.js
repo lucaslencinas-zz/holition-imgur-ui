@@ -35,7 +35,7 @@ describe('UserImages', () => {
 
     it('Renders the elements correctly', () => {
       const grid = userImagesComponent.find('Grid');
-      expect(userImagesComponent.find('h3').text()).to.equal('My Images');
+      expect(userImagesComponent.find('h1').text()).to.equal('My Images');
       expect(grid.prop('images')).to.equal(userImages);
     });
   });

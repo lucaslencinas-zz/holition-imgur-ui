@@ -11,6 +11,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Chai
 - Sinon
 
+## More details
+
+Here in the [details.md file](/details.md)
 
 ## Development
 

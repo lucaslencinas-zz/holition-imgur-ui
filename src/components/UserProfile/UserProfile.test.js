@@ -25,7 +25,7 @@ describe('UserProfile', () => {
     });
 
     it('Renders the elements correctly', () => {
-      expect(userProfileComponent.find('h3').text()).to.equal('Profile');
+      expect(userProfileComponent.find('h1').text()).to.equal('Profile');
     });
   });
 });

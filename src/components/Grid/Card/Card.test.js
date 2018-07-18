@@ -19,12 +19,12 @@ describe('Card', () => {
   });
 
   it('Renders the name, username and the imgUrl of the image', () => {
-    const imageUrl = card.find('[className="card-image"]').text();
+    const imageUrl = card.find('img').prop('src');
     const imageTitle = card.find('[className="card-title"]').text();
-    const imageUsername = card.find('[className="card-username"]').text();
+    const imageUsername = card.find('[className="card-detail"]').text();
 
     expect(imageUrl).to.equal(image.imgUrl);
     expect(imageTitle).to.equal(image.title);
-    expect(imageUsername).to.equal(image.username);
+    expect(imageUsername).to.equal('lencinas (public)');
   });
 });

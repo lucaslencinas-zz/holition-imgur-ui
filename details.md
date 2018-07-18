@@ -7,7 +7,7 @@
 - Serverside rendering. If you want to have better SEO, we should have a node server that serves the UI already built in the server with all the info.
 - Better design for the login form. autofocus and when writing password and hitting enter should login. Better UX.
 - In the listing the `(public)` shouldn't be shown. All of them are public.
-- Just basic testing. Unit for happy paths. If more time, I would use [protractor](https://www.protractortest.org/#/), [puppeteer](https://www.npmjs.com/package/puppeteer) for component tests. Or [pix-diff](https://www.npmjs.com/package/pix-diff) for visual test
+- Just basic testing. Unit for happy paths for simple React components and interacting with the inner state, for actions, reducers, selectors and services. If more time, I would use [protractor](https://www.protractortest.org/#/), [puppeteer](https://www.npmjs.com/package/puppeteer) for component tests. Or [pix-diff](https://www.npmjs.com/package/pix-diff) for visual test
+- ![][]esponsive UI but can be a little better.
 - Better error handling for the actions.
 - When doing commits I didn't test right away due to time constraint. I tested at the end. It wouldn't be like this. Each feature has it tests in the correct branch to be seen before merging it to master.
-- I developed this using a Mac OSX. It would be nice to use docker images for the database and the node server just for being agnostic of the operating system.
